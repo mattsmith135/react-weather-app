@@ -1,13 +1,238 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+    --ff-primary: 'Manrope', sans-serif;
+
+    --clr-primary: #440A5F;
+    --clr-base-1: #000;
+    --clr-base-2: #BFC6CD; 
+    --clr-base-3: #D2DAE0;
+    --clr-base-4: #E9EDF3;
+    --clr-accent: #FBC200;
+    --clr-text-primary: #000;
+    --clr-text-secondary: #fff;
+
+    --fs-200: ; 
+    --fs-300: ; 
+    --fs-400: 1rem; 
+    --fs-500: ;
+    --fs-700: 1.6rem; 
+    --fs-800: ; 
+    --fs-900: ;
+    --fs-xl: ;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--ff-primary);
+    padding: clamp(8rem, calc(8rem + ((1vw - 0.32rem) * 4.1667)), 12rem) 3.2rem;
+    background: var(--clr-base-2)
+}
+
+#root {
+
+}
+
+main {
+
+}
+
+.background, .gradient {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    height: 100%;
+    width: 100%;
+} 
+
+.background {
+    background: url('media/background.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -2000;
+}
+
+.gradient {
+    background: var(--clr-base-2);  
+    opacity: 20%;
+    z-index: -1000;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    gap: 3.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.logo {
+    display: flex; 
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.logo svg {
+    height: 4rem; 
+    fill: var(--clr-accent);
+}
+
+#header__text {
+    max-width: 600px;
+}
+
+.footer {
+    position: fixed;
+    left: 0; 
+    bottom: 0; 
+    width: 100%;
+    text-align: center;
+    background-color: var(--clr-base-1); 
+    color: var(--clr-text-secondary);
+}
+
+#footer__text {
+    padding: 10px 0; 
+}
+
+#footer__text-link {
+    text-decoration: none;
+    color: var(--clr-accent);
+}
+
+#footer__text-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
+
+/* Search input styling */
+.form-container {
+    
+}
+
+.search-form {
+    width: 100%; 
+    max-width: 1100px;
+    margin: auto;
+}
+
+.form-control {
+    width: 100%;
+    gap: 1rem; 
+}
+
+.search-form input {
+    font-family: var(--ff-primary); 
+    font-size: var(--fs-400);
+    border-radius: 100px; 
+    border: none; 
+}
+
+#search-input {
+    padding: 1rem;
+    width: 100%; 
+    margin-bottom: 10px;
+    background-color: var(--clr-base-1);
+    color: var(--clr-text-secondary); 
+
+}
+
+#search-input:focus {
+    outline: none; 
+}
+
+.search-form input[type='submit'] {
+    cursor: pointer; 
+    padding: 0.75rem; 
+}
+
+/* WeatherList styling */
+.weather-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    margin-top: 3.5rem;
+}
+
+.weather-card {
+    display: flex; 
+    width: 100%;
+    max-width: 900px;
+}
+
+.weather-card-left, .weather-card-right  {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    width: 100%;
+}
+
+.weather-card-left {
+    padding: 20px 15px; 
+    background-color: var(--clr-base-3);
+    border-radius: 10px 0px 0px 10px;
+
+    gap: 3rem; 
+}
+
+.weather-card__day {
+    font-weight: 700; 
+    font-size: var(--fs-700);
+
+    padding-bottom: 10px;
+}
+
+.weather-card__location {
+    text-transform: capitalize;
+}
+
+.weather-card__temperature {
+    font-weight: 700; 
+    font-size: var(--fs-700); 
+}
+
+.weather-card-right {
+    padding: 10px;
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.weather-card-compartment {
+    display: flex;
+    flex-direction: column;
+}
+
+.measurement {
+    display: flex;
+    justify-content: space-between;
+}
+
+.measurement__label {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Mobile Responsive: WeatherList Styling */
+@media (max-width: 576px) {
+    .weather-card {
+        flex-direction: column;
+    }
+
+    .weather-card-left {
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .weather-card-right {
+        border-radius: 0px 0px 10px 10px;
+    }
 }

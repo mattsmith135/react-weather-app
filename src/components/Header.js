@@ -5,11 +5,11 @@ const Header = () => {
     <div className='header'>
       <div className='logo'>
         <Logo title={'Wizard hat'}/>
-        <h1 id='logo__text'>WeatherWizard</h1>
+        <h1 id='logo__text'>Weather<span>Wizard</span></h1>
       </div>
       <p id='header__text'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        The app that predicts the future (of weather).
+        This makes checking the weather a breeze, so you can focus on what really matters - like enjoying a sunny day or cozying up on a rainy one.
       </p>
     </div>
   )

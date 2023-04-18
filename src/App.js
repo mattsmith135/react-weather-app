@@ -8,16 +8,13 @@ const { REACT_APP_API_KEY } = process.env;
 
 function App() {
   const [weatherData, setWeatherData] = useState([])
-  const [latitude, setLatitude] = useState([])
-  const [longitude, setLongitude] = useState([]) 
 
   const fetchCityCoords = async (city) => {
     const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${REACT_APP_API_KEY}`)
     const data = await res.json()
-  
-    setLatitude(data[0].lat)
-    setLongitude(data[0].lon)
-    
+    console.log(res); 
+    console.log(data);  
+
     return { latitude: data[0].lat, longitude: data[0].lon }
   }
 
@@ -37,6 +34,7 @@ function App() {
     - collects the important forecast information and pushes it into a new array
     This array is then set as state
     */
+
     for (let i = 0; i < data.list.length; i++) {
       data.list[i]['id'] = i
       data.list[i]['cityname'] = city
@@ -58,7 +56,6 @@ function App() {
       </main>
       <Footer />
     </>
-    
   )
 }
 

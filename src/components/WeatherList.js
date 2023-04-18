@@ -4,8 +4,11 @@ import PropTypes from 'prop-types'
 import WeatherCard from "./WeatherCard"
 
 const WeatherList = ({ weatherData }) => {
+    const city = weatherData[0].cityname;
+
     return (
         <div className='weather-list'>
+            <p id='weather-list__search-description'>Showing forecast for weather in <span>{city}</span></p>
             {weatherData.map((weatherItem) => 
                 <WeatherCard 
                 key={weatherItem.id}

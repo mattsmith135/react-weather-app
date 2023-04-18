@@ -14,9 +14,8 @@ const CityInput = ({ onSearch }) => {
         <div className='form-container'>
             <form className='search-form' onSubmit={onSubmit}>
                 <div className='form-control'>
-                    <input id='search-input' type='text' placeholder='Search your city and let us work our magic.' onChange={(e) => setCity(e.target.value.toLowerCase().trim())} />
+                    <input id='search-input' type='search' placeholder='Search your city and let us work our magic.' onChange={(e) => setCity(e.target.value.toLowerCase().trim())} />
                 </div>
-                <input type='submit' value='Search' className='btn' />
             </form> 
         </div>
         

@@ -3,19 +3,19 @@
 :root {
     --ff-primary: 'Manrope', sans-serif;
 
-    --clr-primary: #440A5F;
+    --clr-primary: #FBC200;
     --clr-base-1: #000;
     --clr-base-2: #BFC6CD; 
     --clr-base-3: #D2DAE0;
     --clr-base-4: #E9EDF3;
-    --clr-accent: #FBC200;
+    --clr-accent: #0088ff;
     --clr-text-primary: #000;
     --clr-text-secondary: #fff;
 
     --fs-200: ; 
     --fs-300: ; 
     --fs-400: 1rem; 
-    --fs-500: ;
+    --fs-500: 1.3rem;
     --fs-700: 1.6rem; 
     --fs-800: ; 
     --fs-900: ;
@@ -31,7 +31,7 @@
 body {
     font-family: var(--ff-primary);
     padding: clamp(8rem, calc(8rem + ((1vw - 0.32rem) * 4.1667)), 12rem) 3.2rem;
-    background: var(--clr-base-2)
+    background-color: var(--clr-base-2)
 }
 
 #root {
@@ -54,11 +54,12 @@ main {
     background: url('media/background.jpg');
     background-size: cover;
     background-position: center;
+    background-color: var(--clr-base-2);
     z-index: -2000;
 }
 
 .gradient {
-    background: var(--clr-base-2);  
+    background: var(--clr-base-1);  
     opacity: 20%;
     z-index: -1000;
 }
@@ -81,11 +82,23 @@ main {
 
 .logo svg {
     height: 4rem; 
-    fill: var(--clr-accent);
+    fill: var(--clr-primary);
+    transform: rotate(7.5deg);
+}
+
+#logo__text {
+    color: var(--clr-text-secondary)
+}
+
+#logo__text span {
+    color: var(--clr-primary);
 }
 
 #header__text {
-    max-width: 600px;
+    max-width: 900px;
+    font-size: var(--fs-500);
+    font-weight: 400;
+    color: var(--clr-text-secondary);
 }
 
 .footer {
@@ -128,29 +141,25 @@ main {
     gap: 1rem; 
 }
 
-.search-form input {
+#search-input {
     font-family: var(--ff-primary); 
     font-size: var(--fs-400);
     border-radius: 100px; 
     border: none; 
-}
 
-#search-input {
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 40px;
     width: 100%; 
     margin-bottom: 10px;
-    background-color: var(--clr-base-1);
-    color: var(--clr-text-secondary); 
-
+    color: var(--clr-text-primary); 
+    
+    background-image: url('media/magnifying-glass-solid.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 0.75rem 50%;
 }
 
 #search-input:focus {
     outline: none; 
-}
-
-.search-form input[type='submit'] {
-    cursor: pointer; 
-    padding: 0.75rem; 
 }
 
 /* WeatherList styling */
@@ -162,6 +171,17 @@ main {
     gap: 2rem;
 
     margin-top: 3.5rem;
+}
+
+#weather-list__search-description {
+    color: var(--clr-text-secondary);
+    width: 100%;
+    max-width: 900px; /* matches max-width of weather-cards */
+}
+
+#weather-list__search-description span {
+    font-weight: 700;
+    text-transform: capitalize;  
 }
 
 .weather-card {
